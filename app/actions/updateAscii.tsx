@@ -9,8 +9,7 @@ export async function updateAscii(formData: FormData) {
   formData.get("customAsciiText"),
     async function getArt() {
       const res = await fetch(
-        "https://asciified.thelicato.io/api/v2/ascii?text=Testing",
-        { cache: "no-store" }
+        "https://asciified.thelicato.io/api/v2/ascii?text=Testing"
       );
       // The return value is *not* serialized
       // You can return Date, Map, Set, etc.
@@ -20,7 +19,6 @@ export async function updateAscii(formData: FormData) {
         throw new Error("Failed to fetch data");
       }
 
-      console.log("RES IS: ", res);
       return res.text();
     };
 

@@ -1,24 +1,12 @@
 import { updateAscii } from "@/app/actions/updateAscii";
 import { AsciiForm } from "./form/AsciiForm";
 
-// async function getArt() {
-//   const res = await fetch(
-//     "https://asciified.thelicato.io/api/v2/ascii?text=Hello+world"
-//   );
-//   // The return value is *not* serialized
-//   // You can return Date, Map, Set, etc.
-
-//   if (!res.ok) {
-//     // This will activate the closest `error.js` Error Boundary
-//     throw new Error("Failed to fetch data");
-//   }
-
-//   return res.text();
-// }
-
-export default async function AsciiArtGenerator() {
-  // const customArt = await getArt();
-  let customArt = "Test";
+export default async function AsciiArtGenerator({
+  customArt,
+}: {
+  customArt: string;
+}) {
+  console.log("Custom Art is now: ", customArt);
 
   return (
     <>
