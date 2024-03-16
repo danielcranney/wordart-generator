@@ -39,7 +39,7 @@ export default function RootLayout({
             />
             <SidebarNavigationItem
               text={"Hit Counter"}
-              route={"hit-counter"}
+              route={"hit-counter-generator"}
               icon={null}
             />
             <SidebarNavigationItem

@@ -25,7 +25,8 @@ Table Of Contents:
       - Horizon
       - Italic Outline
       - Slate
-
+  Components
+    - Inputs
 ******************************************/
 
 /*****************************************
@@ -468,4 +469,14 @@ Structure
   font-weight: normal;
   color: #2f5485;
   text-shadow: 0.03em 0.03em 0px #b3b3b3;
+}
+
+/*****************************************
+Components
+*****************************************/
+/* Inputs */
+@layer components {
+  .input-field {
+    @apply bg-white border border-neutral-200 rounded-md p-2 flex h-10 focus:outline-none focus:border-neutral-500 transition-all duration-150 ease-in-out placeholder:text-neutral-300;
+  }
 }
