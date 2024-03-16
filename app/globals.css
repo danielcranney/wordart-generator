@@ -15,10 +15,16 @@ Table Of Contents:
     - Main
   - Tools
     - Word Art Styles
-      - 
-      -
-      -
-      -
+      - General WordArt
+      - Rainbow
+      - Blues
+      - Superhero
+      - Radial
+      - Tilt
+      - Purple
+      - Horizon
+      - Italic Outline
+      - Slate
 
 ******************************************/
 
@@ -70,19 +76,19 @@ Structure
 /* Aside */
 @layer components {
   aside {
-    @apply flex flex-col w-80 bg-white h-screen p-6 border-r border-neutral-200;
+    @apply flex flex-col w-80 bg-neutral-900 h-screen p-6 border-r border-neutral-900;
   }
   aside > ul {
     @apply flex flex-col gap-y-1 w-full;
   }
   aside > ul > li {
-    @apply flex gap-x-1.5 px-1.5 py-1.5 rounded-lg text-sm transition-all duration-150 ease-in-out text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 cursor-pointer;
+    @apply flex gap-x-1.5 px-1.5 py-1.5 rounded-lg text-sm transition-all duration-150 ease-in-out text-white/70 hover:text-white hover:bg-neutral-800 cursor-pointer;
   }
 }
 /* Main */
 @layer components {
   main {
-    @apply bg-white h-screen flex flex-col overflow-auto w-[calc(100%-20rem)] p-20;
+    @apply bg-white h-screen flex flex-col overflow-auto w-[calc(100%-20rem)] p-12;
   }
 }
 
