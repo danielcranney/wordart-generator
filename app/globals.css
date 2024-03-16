@@ -1,7 +1,20 @@
+@import url("https://use.typekit.net/obh7adg.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/*****************************************
+Table Of Contents:
+  - Root Styles
+  - Body
+  - Structure
+  - Form
+******************************************/
+
+/*****************************************
+Root HTML Styles
+*****************************************/
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -26,8 +39,39 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/*****************************************
+Root Tailwind Styles
+*****************************************/
+@layer base {
+  * {
+    @apply antialiased font-body;
+  }
+}
+
+/*****************************************
+Structure
+*****************************************/
+/* Aside */
+@layer components {
+  aside {
+    @apply flex flex-col w-80 bg-white h-screen p-6 border-r border-neutral-200;
+  }
+  aside > ul {
+    @apply flex flex-col gap-y-1 w-full;
+  }
+  aside > ul > li {
+    @apply flex gap-x-1.5 px-1.5 py-1.5 rounded-lg text-sm transition-all duration-150 ease-in-out text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 cursor-pointer;
+  }
+}
+/* Main */
+@layer components {
+  main {
+    @apply bg-white h-screen flex flex-col overflow-auto w-[calc(100%-20rem)] p-20;
+  }
+}
+/* General Container */
+@layer components {
+  .inner-container {
+    @apply flex container mx-auto gap-2;
   }
 }
