@@ -22,9 +22,10 @@ export const WordArtGenerator = () => {
       <div className="w-full flex flex-col gap-2 pt-5">
         <p className="text-lg font-bold">Style</p>
         <div className="flex gap-x-2 items-center pb-5">
-          {styleOptions.map((style) => {
+          {styleOptions.map((style, index) => {
             return (
               <button
+                key={style.className + index + index}
                 onClick={() => setArtStyle(style.className)}
                 className={`flex rounded-full px-2 py-1 text-sm ${
                   artStyle === style.className
