@@ -17,9 +17,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className + " " + "flex w-full"}>
+      <body className={inter.className + " " + "flex flex-col w-full bg-white"}>
         <aside>
-          <h3 className="text-white text-2xl font-bold mb-6">my90s.website</h3>
+          <h3 className="text-neutral-900 text-2xl font-bold mb-6">
+            my90s.website
+          </h3>
 
           <ul>
             <SidebarNavigationItem

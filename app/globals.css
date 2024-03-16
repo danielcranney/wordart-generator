@@ -77,13 +77,13 @@ Structure
 /* Aside */
 @layer components {
   aside {
-    @apply flex flex-col w-80 bg-neutral-900 h-screen p-6 border-r border-neutral-900;
+    @apply flex flex-col w-full bg-white text-neutral-900 p-6;
   }
   aside > ul {
-    @apply flex flex-col gap-y-1 w-full;
+    @apply flex gap-3 w-full;
   }
   aside > ul > li {
-    @apply flex gap-x-1.5 px-1.5 py-1.5 rounded-lg text-sm transition-all duration-150 ease-in-out text-white/70 hover:text-white hover:bg-neutral-800 cursor-pointer;
+    @apply flex gap-x-1.5 px-2.5 py-1.5 rounded-full text-sm transition-all duration-150 ease-in-out text-neutral-900/70 hover:bg-neutral-900 hover:text-white cursor-pointer;
   }
 }
 /* Main */
