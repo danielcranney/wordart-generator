@@ -13,7 +13,7 @@ export const SidebarNavigationItem = ({
 }) => {
   return (
     <li>
-      <Link href={"tools/" + route}>
+      <Link href={"/tools/" + route}>
         {icon}
         {text}
       </Link>
