@@ -1,4 +1,4 @@
-@import url("https://use.typekit.net/obh7adg.css");
+@import url("https://use.typekit.net/gjb5lfx.css");
 
 @tailwind base;
 @tailwind components;
@@ -27,17 +27,13 @@ Table Of Contents:
       - Slate
   Components
     - Inputs
+    - Preview Area
+    - Button
 ******************************************/
 
 /*****************************************
 Root HTML Styles
 *****************************************/
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -46,58 +42,95 @@ Root HTML Styles
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-/*****************************************
-Root Tailwind Styles
-*****************************************/
+/***********************/
+/*     Core Styles     */
+/***********************/
 @layer base {
   * {
     @apply antialiased font-body;
+  }
+  body {
+    @apply bg-white;
+  }
+  .page-container {
+    @apply container mx-auto gap-y-4 lg:gap-8 w-full grid grid-cols-1 lg:grid-cols-3;
+  }
+}
+
+/**********************/
+/*     Typography     */
+/**********************/
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display text-slate-900 mb-0
+    transition-all duration-150 tracking-tight;
+  }
+  h1 {
+    @apply text-3xl sm:text-4xl md:text-6xl;
+  }
+  h2 {
+    @apply text-3xl;
+  }
+  h3 {
+    @apply text-2xl;
+  }
+  h4 {
+    @apply text-xl;
+  }
+  h5 {
+    @apply text-base;
+  }
+  h6 {
+    @apply text-sm font-bold;
+  }
+  p {
+    @apply font-body font-semibold text-slate-700;
+  }
+  a {
+    @apply text-[#1a93c2] hover:text-slate-900 font-bold transition-all duration-150 ease-in-out;
+  }
+  a.text-link {
+    @apply hover:underline;
   }
 }
 
 /*****************************************
 Structure
 *****************************************/
-/* General Container */
+/* Header */
 @layer components {
-  .inner-container {
-    @apply flex container mx-auto gap-2;
-  }
-}
-/* Aside */
-@layer components {
-  aside {
-    @apply flex flex-col w-full bg-white text-neutral-900 p-6;
-  }
-  aside > ul {
-    @apply flex gap-3 w-full;
-  }
-  aside > ul > li {
-    @apply flex gap-x-1.5 px-2.5 py-1.5 rounded-full text-sm transition-all duration-150 ease-in-out text-neutral-900/70 hover:bg-neutral-900 hover:text-white cursor-pointer;
+  header,
+  footer {
+    @apply flex w-full bg-slate-900 text-white p-6 items-center;
   }
 }
 /* Main */
 @layer components {
   main {
-    @apply bg-white h-screen flex flex-col overflow-auto w-[calc(100%-20rem)] p-12;
+    @apply bg-slate-200/75 flex flex-col w-full px-4 py-4 md:px-8 md:py-8 lg:py-12 lg:px-12;
   }
 }
 
 /* Wordart Styles */
 /* Thank you to Nick Georgiou from DesignPieces for making these available */
+.site-title {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .wordart {
   font-family: Arial, sans-serif;
-  font-size: 4em;
+  font-size: 5em;
   font-weight: bold;
   position: relative;
   z-index: 1;
@@ -167,6 +200,7 @@ Structure
 }
 
 /* Blues */
+.site-title.blues .text,
 .wordart.blues .text {
   font-family: Impact, sans-serif;
   color: #24c0fd;
@@ -474,9 +508,33 @@ Structure
 /*****************************************
 Components
 *****************************************/
-/* Inputs */
+/* Input */
 @layer components {
-  .input-field {
-    @apply bg-white border border-neutral-200 rounded-md p-2 flex h-10 focus:outline-none focus:border-neutral-500 transition-all duration-150 ease-in-out placeholder:text-neutral-300;
+  input {
+    @apply w-full border border-slate-300 rounded-md p-2 flex h-12 focus:outline-none focus:border-slate-400 transition-all duration-150 ease-in-out placeholder:text-slate-600 text-slate-900 font-bold;
+  }
+}
+
+/* Preview Area */
+@layer components {
+  .preview-box {
+    @apply bg-slate-100 flex w-full h-full py-20 relative items-center justify-center border border-slate-300 rounded-xl;
+  }
+}
+
+/* Download */
+@layer components {
+  .accent-button {
+    @apply flex items-center ml-auto font-bold rounded-md px-3 py-2 bg-[#24c0fd] hover:bg-slate-900 text-slate-900 hover:text-white transition-all duration-150 ease-in-out gap-x-2;
+  }
+}
+
+/* Modal */
+@layer components {
+  .modal-overlay {
+    @apply fixed h-screen w-full bg-slate-900/80 top-0 left-0 right-0 bottom-0 z-10 flex items-center justify-center;
+  }
+  .modal-content {
+    @apply flex flex-col w-1/2 items-center justify-center bg-white shadow-lg shadow-slate-900 rounded-2xl relative gap-y-4 p-8;
   }
 }
