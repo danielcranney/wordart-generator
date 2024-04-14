@@ -112,7 +112,7 @@ Structure
 /* Main */
 @layer components {
   main {
-    @apply bg-slate-200/75 flex flex-col w-full px-4 py-4 md:px-8 md:py-8 lg:py-12 lg:px-12;
+    @apply bg-slate-200/75 flex flex-col w-full px-4 py-4 md:px-8 md:py-8 lg:py-12 lg:px-12 grow;
   }
 }
 
