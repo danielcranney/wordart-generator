@@ -7,7 +7,7 @@ export const Modal = ({ toggleModal }: { toggleModal: any }) => {
     <div className="modal-overlay">
       <div className="modal-content">
         <button
-          className="absolute right-8 top-8 font-bold text-sm bg-slate-100 rounded-md px-3 py-2 text-slate-800 hover:bg-slate-200 hover:text-slate-900 transition-all duration-150 ease-in-out"
+          className="absolute right-8 top-8 light-button"
           onClick={toggleModal}
         >
           Close
@@ -33,7 +33,7 @@ export const Modal = ({ toggleModal }: { toggleModal: any }) => {
             >
               create an issue
             </a>{" "}
-            on GitHub
+            on GitHub.
           </p>
         </div>
         <hr className="w-3/4 h-px bg-slate-200 border-0" />

@@ -47,7 +47,7 @@ export const WordArtGenerator = () => {
       {showModal && <Modal toggleModal={toggleModal} />}
 
       <article className="bg-white w-full flex flex-col gap-y-2 p-8 rounded-xl col-span-1">
-        <h3 className="text-lg">Styles</h3>
+        <h3 className="text-lg">Style Selector</h3>
         <div className="flex flex-wrap gap-2">
           {styleOptions.map((style, index) => {
             return (
@@ -70,7 +70,7 @@ export const WordArtGenerator = () => {
         <ColorHubAd />
       </article>
 
-      <article className="flex flex-col gap-y-4 p-8 bg-white rounded-xl col-span-2">
+      <article className="flex flex-col gap-y-2 p-8 bg-white rounded-xl col-span-2">
         <h3 className="text-lg">Text to Display</h3>
         <input
           value={customText}
@@ -80,7 +80,7 @@ export const WordArtGenerator = () => {
 
         <div ref={elementRef} className="preview-box">
           <div className={`wordart ${artStyle}`}>
-            <span className="text">{customText}</span>
+            <span className="text">{customText || "WordArt"}</span>
           </div>
         </div>
 
@@ -90,7 +90,7 @@ export const WordArtGenerator = () => {
               downloadImage();
               toggleModal();
             }}
-            className="accent-button"
+            className="accent-button mt-2"
           >
             <DownloadIcon />
             Download WordArt

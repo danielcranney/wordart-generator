@@ -130,7 +130,7 @@ Structure
 
 .wordart {
   font-family: Arial, sans-serif;
-  font-size: 5em;
+  font-size: 2em;
   font-weight: bold;
   position: relative;
   z-index: 1;
@@ -139,13 +139,31 @@ Structure
   -moz-osx-font-smoothing: grayscale;
 }
 
+@media (min-width: 640px) {
+  .wordart {
+    font-size: 3em;
+  }
+}
+
+@media (min-width: 768px) {
+  .wordart {
+    font-size: 4em;
+  }
+}
+
+@media (min-width: 1280px) {
+  .wordart {
+    font-size: 5em;
+  }
+}
+
 /* Rainbow Styles */
 .wordart.rainbow {
-  transform: scale(1, 1.5);
-  -webkit-transform: scale(1, 1.5);
-  -moz-transform: scale(1, 1.5);
-  -o-transform: scale(1, 1.5);
-  -ms-transform: scale(1, 1.5);
+  transform: scale(1.5, 1.5);
+  -webkit-transform: scale(1.5, 1.5);
+  -moz-transform: scale(1.5, 1.5);
+  -o-transform: scale(1.5, 1.5);
+  -ms-transform: scale(1.5, 1.5);
 }
 
 .wordart.rainbow .text {
@@ -527,6 +545,9 @@ Components
   .accent-button {
     @apply flex items-center ml-auto font-bold rounded-md px-3 py-2 bg-[#24c0fd] hover:bg-slate-900 text-slate-900 hover:text-white transition-all duration-150 ease-in-out gap-x-2;
   }
+  .light-button {
+    @apply font-bold text-sm bg-slate-100 rounded-md px-3 py-2 text-slate-800 hover:bg-slate-200 hover:text-slate-900 transition-all duration-150 ease-in-out;
+  }
 }
 
 /* Modal */
@@ -535,6 +556,6 @@ Components
     @apply fixed h-screen w-full bg-slate-900/80 top-0 left-0 right-0 bottom-0 z-10 flex items-center justify-center;
   }
   .modal-content {
-    @apply flex flex-col w-1/2 items-center justify-center bg-white shadow-lg shadow-slate-900 rounded-2xl relative gap-y-4 p-8;
+    @apply flex flex-col w-[95%] md:w-1/2 items-center justify-center bg-white shadow-lg shadow-slate-900 rounded-2xl relative gap-y-4 p-8;
   }
 }
