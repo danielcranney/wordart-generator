@@ -7,9 +7,9 @@ import { ColorHubAd } from "./ColorHubAd";
 import { Modal } from "./Modal";
 
 export const WordArtGenerator = () => {
-  const [artStyle, setArtStyle] = useState("rainbow");
-  const [customText, setCustomText] = useState("Word Art");
-  const [showModal, setShowModal] = useState(false);
+  const [artStyle, setArtStyle] = useState<string>("rainbow");
+  const [customText, setCustomText] = useState<string>("Word Art");
+  const [showModal, setShowModal] = useState<boolean>(false);
   const elementRef = useRef<HTMLDivElement>(null);
 
   const downloadImage = () => {
